@@ -96,6 +96,7 @@ def keyboardInterruptHandling(text = ''):
     print('\n')
     exit()
   return action
+  
 def gameManager():
   availableCommands = ['createNote', 'readCompletedNotes', 'readUncompletedNotes', 'readAllNotes', 'changeNoteValue', "changeNoteStatus", 'deleteNote']
   print(' ')
