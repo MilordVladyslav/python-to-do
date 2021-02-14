@@ -89,11 +89,18 @@ def deleteNote(noteCurrentValue):
   else:
     print('this element does not exist!')
 
+def keyboardInterruptHandling(text = ''):
+  try:
+    action = input(text)
+  except:
+    print('\n')
+    exit()
+  return action
 def gameManager():
   availableCommands = ['createNote', 'readCompletedNotes', 'readUncompletedNotes', 'readAllNotes', 'changeNoteValue', "changeNoteStatus", 'deleteNote']
   print(' ')
   try:
-    action = input('Welcome to the to-do list, please, type LIST for the available actions or write your action: ')
+    action = keyboardInterruptHandling('Welcome to the to-do list, please, type LIST for the available actions or write your action: ')
   except:
     print('\n')
     exit()
@@ -102,7 +109,7 @@ def gameManager():
     for command in availableCommands:
       print(command)
   elif action == 'createNote' :
-    createNoteValue = input('please name your note: ')
+    createNoteValue = keyboardInterruptHandling('please name your note: ')
     createNote(createNoteValue)
   elif action == 'readCompletedNotes':
     readNotes('completedNotes')
@@ -111,9 +118,9 @@ def gameManager():
   elif action == 'readAllNotes':
     readNotes('allNotes')
   elif action == 'changeNoteValue':
-    currentNoteValue = input('please select a value of the note: ')
+    currentNoteValue = keyboardInterruptHandling('please select a value of the note: ')
     if currentNoteValue: 
-      newValue = input('please select a new value for the note: ')
+      newValue = keyboardInterruptHandling('please select a new value for the note: ')
       if newValue:
         changeNoteValue(currentNoteValue, newValue)
       else:
@@ -121,14 +128,14 @@ def gameManager():
     else:
       print('incorrect value!')
   elif action == 'changeNoteStatus':
-    currentNoteValue = input('please select a value of the note: ')
+    currentNoteValue = keyboardInterruptHandling('please select a value of the note: ')
     if currentNoteValue:
-      status = input('choose 1 if you wanna put the note into completed list or any other key if you wanna put the note into uncompleted list: ')
+      status = keyboardInterruptHandling('choose 1 if you wanna put the note into completed list or any other key if you wanna put the note into uncompleted list: ')
       changeNoteStatus(currentNoteValue, status)
     else:
       print('incorrect value!')
   elif action == 'deleteNote':
-    currentNoteValue = input('please select a value of the note: ')
+    currentNoteValue = keyboardInterruptHandling('please select a value of the note: ')
     if currentNoteValue:
       deleteNote(currentNoteValue)
     else:
