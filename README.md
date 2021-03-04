@@ -5,6 +5,6 @@ p.s. I do not learn Python yet 😄
 CRUD,
 generators,
 exeptions handling,
-working with files,
+working with the files,
 functions
 
