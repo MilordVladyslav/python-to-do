@@ -1,5 +1,5 @@
 ## python-to-do
-p.s. I'm not learning python yet. This is just for fun 😄
+p.s. I do not learn Python yet 😄
 
 ### features:
 CRUD,
